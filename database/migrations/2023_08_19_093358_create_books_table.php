@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->string('no_pages');
+            $table->timestamps();
             $table->foreign('id')->references('id')->on('autors');
         });
     }

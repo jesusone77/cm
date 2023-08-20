@@ -22,7 +22,8 @@ class StoreBookRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'title' => 'required|max:255',
+            'no_pages' => 'required',
         ];
     }
 }

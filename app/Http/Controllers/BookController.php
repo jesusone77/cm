@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use Illuminate\Support\Carbon;
 
 use App\Models\Book;
 use App\Http\Requests\StoreBookRequest;
@@ -22,7 +23,13 @@ class BookController extends Controller
      */
     public function create()
     {
-        //
+        // create: El método "create" en un controlador 
+        // generalmente se utiliza para mostrar un formulario 
+        // de creación de un nuevo recurso. En otras palabras, 
+        // es responsable de mostrar la vista que contiene el 
+        // formulario HTML donde los usuarios pueden ingresar 
+        // los datos necesarios para crear un nuevo registro 
+        // en la base de datos.
     }
 
     /**
@@ -30,7 +37,12 @@ class BookController extends Controller
      */
     public function store(StoreBookRequest $request)
     {
-       dd($request);
+       $book = new Book;
+       $now = Carbon::now();
+       $book->title = $request->title;
+       $book->no_pages = $request->no_pages;
+       $book->save();
+       return redirect('/books');
     }
 
     /**
@@ -38,7 +50,7 @@ class BookController extends Controller
      */
     public function show(Book $book)
     {
-       dd('adios');
+    //    dd('adios');
        //
     }
 
