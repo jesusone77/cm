@@ -21,7 +21,7 @@ Route::get('/', function () {
 });
 
  
-// Route::resource('books', BookController::class)
-//     ->missing(function (Request $request) {
-//     return Redirect::route('books.index');
-// });
+Route::resource('books', BookController::class)
+    ->missing(function (Request $request) {
+    return Redirect::route('books.index');
+});
