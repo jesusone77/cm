@@ -13,7 +13,9 @@ class AutorController extends Controller
      */
     public function index()
     {
-        return 'Autors';
+        return view('Autor.autor', [
+            'records' => Autor::All()
+        ]);
     }
 
     /**
@@ -43,7 +45,7 @@ class AutorController extends Controller
      */
     public function show(Autor $autor)
     {
-        
+        dd('here');
         // foreach (Autor::all() as $flight) {
         //     echo $flight->name.' '.$flight->email."<br>";
         // }
@@ -55,6 +57,8 @@ class AutorController extends Controller
     public function edit(Autor $autor)
     {
         //
+        dd('here');
+
     }
 
     /**
@@ -63,6 +67,8 @@ class AutorController extends Controller
     public function update(UpdateAutorRequest $request, Autor $autor)
     {
         //
+        dd('here');
+
     }
 
     /**
@@ -70,6 +76,9 @@ class AutorController extends Controller
      */
     public function destroy(Autor $autor)
     {
-        //
+        $flight = Autor::find($autor->id);
+        $flight->delete();
+        return redirect('/autors');
+
     }
 }
