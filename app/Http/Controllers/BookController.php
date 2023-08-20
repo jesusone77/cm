@@ -15,7 +15,7 @@ class BookController extends Controller
      */
     public function index()
     {
-        return 'Hello Word';
+        return 'Books';
     }
 
     /**
@@ -38,9 +38,9 @@ class BookController extends Controller
     public function store(StoreBookRequest $request)
     {
        $book = new Book;
-       $now = Carbon::now();
        $book->title = $request->title;
        $book->no_pages = $request->no_pages;
+       $book->autores_id = $request->autores_id;
        $book->save();
        return redirect('/books');
     }

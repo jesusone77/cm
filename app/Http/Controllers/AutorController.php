@@ -13,7 +13,7 @@ class AutorController extends Controller
      */
     public function index()
     {
-        //
+        return 'Autors';
     }
 
     /**
@@ -29,7 +29,13 @@ class AutorController extends Controller
      */
     public function store(StoreAutorRequest $request)
     {
-        //
+        $autor = new Autor;
+
+        $autor->name = $request->name;
+        $autor->email = $request->email;
+        $autor->save();
+        return redirect('/autors');
+
     }
 
     /**
@@ -37,7 +43,10 @@ class AutorController extends Controller
      */
     public function show(Autor $autor)
     {
-        //
+        
+        // foreach (Autor::all() as $flight) {
+        //     echo $flight->name.' '.$flight->email."<br>";
+        // }
     }
 
     /**

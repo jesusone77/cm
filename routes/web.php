@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AutorController;
 use App\Http\Controllers\BookController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Redirect;
@@ -24,4 +25,9 @@ Route::get('/', function () {
 Route::resource('books', BookController::class)
     ->missing(function (Request $request) {
     return Redirect::route('books.index');
+});
+
+Route::resource('autors', AutorController::class)
+    ->missing(function (Request $request) {
+    return Redirect ('autor.index');
 });
