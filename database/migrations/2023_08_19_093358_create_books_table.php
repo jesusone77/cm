@@ -16,7 +16,8 @@ return new class extends Migration
             $table->string('title');
             $table->string('no_pages');
             $table->timestamps();
-            $table->foreign('id')->references('id')->on('autors');
+            $table->unsignedBigInteger('autores_id');
+            $table->foreign('autores_id')->references('id')->on('autors');
         });
     }
 
