@@ -30,7 +30,7 @@ class BookController extends Controller
      */
     public function store(StoreBookRequest $request)
     {
-        //
+       dd($request);
     }
 
     /**
@@ -38,7 +38,8 @@ class BookController extends Controller
      */
     public function show(Book $book)
     {
-        //
+       dd('adios');
+       //
     }
 
     /**
