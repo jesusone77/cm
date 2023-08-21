@@ -47,7 +47,7 @@ class AutorController extends Controller
      */
     public function show(Autor $autor)
     {
-        dd('hereSDFSDF');
+        //show
     }
 
     /**
@@ -76,8 +76,6 @@ class AutorController extends Controller
     public function destroy(Autor $autor)
     {
         $autor = Autor::find($autor->id);
-        $autor->delete();
         return redirect('/autors');
-
     }
 }
