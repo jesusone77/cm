@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Autor;
 
+
 class ApiController extends Controller
 {
     //
@@ -28,4 +29,5 @@ class ApiController extends Controller
         ]);
         
     }
+
 }
