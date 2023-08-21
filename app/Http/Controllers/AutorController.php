@@ -6,7 +6,8 @@ use App\Models\Autor;
 use App\Http\Requests\StoreAutorRequest;
 use App\Http\Requests\UpdateAutorRequest;
 use Illuminate\Support\Facades\Redirect;
-
+use Symfony\Component\HttpFoundation\Response;
+use App\Providers\RouteServiceProvider;
 class AutorController extends Controller
 {
     /**
@@ -24,7 +25,7 @@ class AutorController extends Controller
      */
     public function create()
     {
-        return redirect('/AgregarAutorForm');
+        return redirect('/agregarAutorForm');
     }
 
     /**
@@ -46,10 +47,7 @@ class AutorController extends Controller
      */
     public function show(Autor $autor)
     {
-        dd('here');
-        // foreach (Autor::all() as $flight) {
-        //     echo $flight->name.' '.$flight->email."<br>";
-        // }
+        dd('hereSDFSDF');
     }
 
     /**
@@ -57,9 +55,8 @@ class AutorController extends Controller
      */
     public function edit(Autor $autor)
     {
-        //
-        dd('here');
-
+        $autor = Autor::find($autor->id);
+        return view('components.forms.dataAutor', compact('autor'));
     }
 
     /**
@@ -67,9 +64,10 @@ class AutorController extends Controller
      */
     public function update(UpdateAutorRequest $request, Autor $autor)
     {
-        //
-        dd('here');
-
+        $autor->name = $request->name;
+        $autor->email = $request->email;
+        $autor->save();
+        return redirect('/autors');
     }
 
     /**
@@ -77,8 +75,8 @@ class AutorController extends Controller
      */
     public function destroy(Autor $autor)
     {
-        $flight = Autor::find($autor->id);
-        $flight->delete();
+        $autor = Autor::find($autor->id);
+        $autor->delete();
         return redirect('/autors');
 
     }

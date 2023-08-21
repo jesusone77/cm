@@ -34,4 +34,10 @@ Route::resource('autors', AutorController::class)
 
 //Agregar 
 
-Route::view('/AgregarAutorForm','components.forms.inputAutor');
+Route::view('/agregarAutorForm','components.forms.inputAutor');
+
+
+// Route::get('/actualizarAutorForm', function()
+// {
+//     return View::make('components.forms.updateAutor', array('name' => 'Taylor'));
+// });

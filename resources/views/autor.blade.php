@@ -20,9 +20,9 @@
                     <td>{{ $user->name }}</td>
                     <td>{{ $user->email }}</td>
                     <td>
-                        <form action="/autors/{{$user->id}}" method="POST">
+                        <form action="/autors/{{$user->id}}/edit/" method="PUT">
                             @csrf
-                            @method('UPDATE')
+                            @method('PUT')
                             <input type="submit" value="Update">
                         </form>
                     </td>
