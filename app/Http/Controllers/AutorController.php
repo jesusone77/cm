@@ -13,8 +13,9 @@ class AutorController extends Controller
      */
     public function index()
     {
-        return view('Autor.autor', [
-            'records' => Autor::All()
+        return view('autor', [
+            'records' => Autor::All(),
+            'title' => 'Autores'
         ]);
     }
 
