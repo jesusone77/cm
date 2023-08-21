@@ -1,5 +1,9 @@
 @extends('components.welcome')
-@section('title', 'Autores')
+@section('title', 'Autor')
+@section('content')
+    <div>
+        <a href="/autors/create">Crear Autor</a>
+    </div>
     <div>
         <table>
             <tr>
@@ -32,3 +36,4 @@
                 </tr>
             @endforeach
     </div>
+@endsection

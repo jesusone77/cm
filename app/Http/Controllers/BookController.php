@@ -30,6 +30,8 @@ class BookController extends Controller
         // formulario HTML donde los usuarios pueden ingresar 
         // los datos necesarios para crear un nuevo registro 
         // en la base de datos.
+       return redirect('/crearAutor');
+
     }
 
     /**

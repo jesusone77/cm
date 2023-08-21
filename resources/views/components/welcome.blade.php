@@ -1,15 +1,16 @@
  
 <html>
     <head>
-        <title>App Name - @yield('title')</title>
+        <title>@yield('title')</title>
+        <h3>@yield('title')<h3>
     </head>
     <body>
         @section('sidebar')
-            This is the master sidebar.
+            CRUD
         @show
  
         <div class="container">
-            @yield('content')
+            @yield('content') 
         </div>
     </body>
 </html>

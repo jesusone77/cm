@@ -31,3 +31,7 @@ Route::resource('autors', AutorController::class)
     ->missing(function (Request $request) {
     return Redirect ('autor.index');
 });
+
+//Agregar 
+
+Route::view('/AgregarAutorForm','components.forms.inputAutor');

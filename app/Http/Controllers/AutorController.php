@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Autor;
 use App\Http\Requests\StoreAutorRequest;
 use App\Http\Requests\UpdateAutorRequest;
+use Illuminate\Support\Facades\Redirect;
 
 class AutorController extends Controller
 {
@@ -14,8 +15,7 @@ class AutorController extends Controller
     public function index()
     {
         return view('autor', [
-            'records' => Autor::All(),
-            'title' => 'Autores'
+            'records' => Autor::All()
         ]);
     }
 
@@ -24,7 +24,7 @@ class AutorController extends Controller
      */
     public function create()
     {
-        //
+        return redirect('/AgregarAutorForm');
     }
 
     /**
