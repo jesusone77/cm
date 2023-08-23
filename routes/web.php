@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AutorController;
 use App\Http\Controllers\BookController;
+use App\Models\Category;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Http\Request;
@@ -31,6 +32,11 @@ Route::resource('autors', AutorController::class)
     ->missing(function (Request $request) {
     return Redirect ('autor.index');
 });
+
+Route::resource('category', Category::class)
+    ->missing(function(Request $resquest) {
+        return Redirect('category.index');
+    });
 
 //Agregar 
 
