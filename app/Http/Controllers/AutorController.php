@@ -76,6 +76,7 @@ class AutorController extends Controller
     public function destroy(Autor $autor)
     {
         $autor = Autor::find($autor->id);
+        $autor->delete();
         return redirect('/autors');
     }
 }

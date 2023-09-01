@@ -1,6 +1,7 @@
 @extends('components.welcome')
 @section('title', 'Autor')
 @section('content')
+<div> HOLAAA </div>
     <div>
         <a href="/autors/create">Crear Autor</a>
     </div>
